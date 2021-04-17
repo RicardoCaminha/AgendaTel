@@ -12,7 +12,7 @@ para entradas em uma agenda telefônica com nome e telefone.
 
 2. realizar fork do repositório AgendaTel
 
-- (Repositório AgendaTel no GihHub)[https://github.com/marciobelo/AgendaTel]
+- [Repositório AgendaTel no GihHub](https://github.com/marciobelo/AgendaTel)
 
 3. clonar repositório localmente
 
@@ -26,7 +26,7 @@ git clone https://github.com/fulano/AgendaTel.git
 
 4. Baixar o NetBeans (quem não tiver)
 
-- (Link NetBeans)[https://netbeans.apache.org]
+- [Link NetBeans](https://netbeans.apache.org)
 
 5. Abrir o projeto e rodar
 
