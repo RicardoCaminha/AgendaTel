@@ -1,30 +1,59 @@
-# AgendaTel
+# Trabalho de Banco de Dados AgendaTel
 
-1. realizar fork do repositótio https://github.com/marciobelo/AgendaTel
+## Contexto
 
-2. clonar repositório localmente
+A aplicação *AgendaTel* é uma aplicação Java usando a biblioteca de janelas
+gráficas ao usuário (*GUI*) chamada *Swing*. Basicamente a aplicação é um *CRUD*
+para entradas em uma agenda telefônica com nome e telefone.
 
-ATENÇÃO: para o link abaixo para o seu repositório do seu fork
+## Preparação
+
+1. Crie uma conta no GitHub (caso ainda não tenha uma)
+
+2. realizar fork do repositório AgendaTel
+
+- (Repositório AgendaTel no GihHub)[https://github.com/marciobelo/AgendaTel]
+
+3. clonar repositório localmente
+
+ATENÇÃO: **NÃO** é para clonar o de repositório do professor! É para clonar o
+seu próprio repositório (criado a partir do fork do professor). 
+Repare o fulano abaixo representa seu nome de usuário no GitHub.
 
 ```sh
-git clone https://github.com/marciobelo/AgendaTel.git
+git clone https://github.com/fulano/AgendaTel.git
 ```
 
-3. (baixar o netbeans -quem não tiver)[https://netbeans.apache.org]
+4. Baixar o NetBeans (quem não tiver)
 
-4. abrir o projeto e rodar. 
+- (Link NetBeans)[https://netbeans.apache.org]
+
+5. Abrir o projeto e rodar
 
 Teste a aplicação usando serialização em disco.
 
-Explore o código da aplicação: a aplicação usa Swing para criação da interface
-com o usuário.
+Explore o código da aplicação: a aplicação usa *Swing* para criação da 
+interface com o usuário.
 
-5. Mude a persistência para usar banco de dados MySQL
+## O Trabalho
 
-> Dica: em windows, use um software como WampServer ou VertrigoServ.
+Após sua análise do código, você perceberá que os registros são salvos num
+objeto serializável que é persistido num arquivo em disco (`agenda.ser`).
 
-6. Coloque na resposta o link para o seu repositório com o código modificado.
+Mude a aplicação para que ele persista os registros num banco de dados
+*MySQL*.
 
-P.ex.: https://github.com/fulano/AgendaTel.git
+> Dica: em *Windows*, use um software como WampServer (ou VertrigoServ). Ele
+cria uma instalação local do *MySQL* de forma simples para começar a usar.
+Teste sua conexão antes de tentar codificar a solução.
+
+Sua entrega será composta por duas partes:
+
+1. Submissão da URL do seu repositório GIT.
+
+P.ex.: `https://github.com/fulano/AgendaTel.git`
 
 > Atenção: o seu fork precisa estar público também.
+
+2. Dentro do seu repositório, na pasta `video` coloque um
+arquivo mp4 mostrando sua aplicação já utilizando o banco de dados *MySQL*.
