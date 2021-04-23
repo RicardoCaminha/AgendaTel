@@ -26,6 +26,8 @@ public class AgendaControle implements ActionListener,
         tela.addWindowListener(this);
 
     }
+    
+    
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -38,6 +40,15 @@ public class AgendaControle implements ActionListener,
 
             String nome=telaEditar.getNome();
             String telefone=telaEditar.getTelefone();
+
+            if(telefone.isEmpty()){
+                    JOptionPane.showMessageDialog(tela, "Necessário informar o telefone!");
+                    return;
+             }
+             if(nome.isEmpty()){
+                    JOptionPane.showMessageDialog(tela, "Necessário informar o  nome!");
+                    return;
+             }
 
             Contato contato=new Contato(nome,telefone);
             agendaModelo.adicionarContato(contato);
@@ -55,6 +66,15 @@ public class AgendaControle implements ActionListener,
 
                 String nome=telaEditar.getNome();
                 String telefone=telaEditar.getTelefone();
+                
+                if(telefone.isEmpty()){
+                       JOptionPane.showMessageDialog(tela, "Necessário informar o telefone!");
+                       return;
+                }
+                if(nome.isEmpty()){
+                       JOptionPane.showMessageDialog(tela, "Necessário informar o nome!");
+                       return;
+                }
 
                 Contato contatoEditado=new Contato(nome,telefone);
                 agendaModelo.setContato(contatoEditado,linha);

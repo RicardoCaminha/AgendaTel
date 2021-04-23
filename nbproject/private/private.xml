@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/mnt/DADOS/gdrive/ensino/antigo/oo2.ist.faetec/GabaritosAula/AgendaTel/src/controle/Main.java</file>
-            <file>file:/mnt/DADOS/gdrive/ensino/antigo/oo2.ist.faetec/GabaritosAula/AgendaTel/src/modelo/Contato.java</file>
-            <file>file:/mnt/DADOS/gdrive/ensino/antigo/oo2.ist.faetec/GabaritosAula/AgendaTel/src/controle/TabelaAgendaModelo.java</file>
+            <file>file:/home/pscs/Área%20de%20Trabalho/AgendaTel-7545c9365585d36b87656a9dc1394867d8e3e59a/src/controle/AgendaControle.java</file>
+            <file>file:/home/pscs/Área%20de%20Trabalho/AgendaTel-7545c9365585d36b87656a9dc1394867d8e3e59a/src/repositorio/RepositorioMysql.java</file>
+            <file>file:/home/pscs/Área%20de%20Trabalho/AgendaTel-7545c9365585d36b87656a9dc1394867d8e3e59a/src/controle/TabelaAgendaModelo.java</file>
+            <file>file:/home/pscs/Área%20de%20Trabalho/AgendaTel-7545c9365585d36b87656a9dc1394867d8e3e59a/src/controle/Main.java</file>
         </group>
     </open-files>
 </project-private>

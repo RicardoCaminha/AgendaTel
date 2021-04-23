@@ -14,10 +14,12 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
+import repositorio.RepositorioMysql;
 
 public class TabelaAgendaModelo extends AbstractTableModel {
 
     private List<Contato> lista=new ArrayList<Contato>();
+    
 
     public TabelaAgendaModelo() {
     }
@@ -73,46 +75,74 @@ public class TabelaAgendaModelo extends AbstractTableModel {
     }
 
     public void remove(int linha) {
-        lista.remove(linha);
-        fireTableDataChanged();
+        try {
+            RepositorioMysql.getInstance().remover(getContato(linha));
+           carregarContatos();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao tentar remover! "+ e.getMessage());
+        }
+        
     }
 
     public void setContato(Contato contatoEditado, int linha) {
-        lista.set(linha, contatoEditado);
-        fireTableDataChanged();
+        try {
+            
+            Contato contatoAntigo = getContato(linha);
+            RepositorioMysql.getInstance().editar(contatoEditado, contatoAntigo.getTelefone());
+            carregarContatos();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro ao tentar atualizar! ");
+        }
+        
     }
     
     public void adicionarContato(Contato contato) {
+        try {
+            RepositorioMysql.getInstance().persistirContato(contato);
+           carregarContatos();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro de persistência. "+ e.getMessage());
+        }
+        
+        /*
         lista.add(contato);
-        fireTableDataChanged();
+        fireTableDataChanged();*/
     }
 
     void carregarContatos() {
-        FileInputStream fis = null;
+//        FileInputStream fis = null;
         try {
-            fis = new FileInputStream("agenda.ser");
+           /* fis = new FileInputStream("agenda.ser");
             ObjectInputStream ois = new ObjectInputStream(fis);
-            lista = (ArrayList<Contato>) ois.readObject();
+            lista = (ArrayList<Contato>) ois.readObject();*/
+           lista = RepositorioMysql.getInstance().carregarContatos();
             fireTableDataChanged();
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Erro de persistência.");
-        } finally {
+            JOptionPane.showMessageDialog(null, "Erro de persistência. "+ ex.getMessage());
+            
+        }/* finally {
             try {
                 fis.close();
             } catch (IOException ex) {
                 Logger.getLogger(TabelaAgendaModelo.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
+        }*/
     }
 
     public void persistirContatos() {
         try {
+//            for(Contato contato : lista){
+//                RepositorioMysql.getInstance().persistirContato(contato);
+//            }
+            /*
+            
             FileOutputStream fos = new FileOutputStream("agenda.ser");
             ObjectOutputStream oos=new ObjectOutputStream(fos);
             oos.writeObject(lista);
-            oos.close();
-        } catch (IOException ex) {
-            
+            oos.close();*/
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Erro de persistência. "+ ex.getMessage());
         }
 
     }
